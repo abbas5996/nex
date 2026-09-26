@@ -1,0 +1,364 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #F4A049;
+  --color-brand-bronze: #7E4010;
+  --color-brand-dark: #333333;
+  --color-brand-charcoal: #333333;
+  --color-brand-silver: #DCDCDC;
+}
+
+@layer base {
+  :root {
+    --bg-dark-slate: #1E1E1E;
+    --brand-primary-orange: #F4A049;
+    --brand-deep-bronze: #7E4010;
+    --brand-charcoal: #333333;
+    --brand-metallic-silver: #DCDCDC;
+    --text-pure-white: #FFFFFF;
+    --text-muted-slate: #DCDCDC;
+  }
+
+  body {
+    background-color: #1A1A1A;
+    color: #F8FAFC;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #F4A049;
+    color: #1E1E1E;
+  }
+}
+
+/* Custom Cyber Glow Utilities & Brand Classes */
+.bg-dark-slate {
+  background-color: #333333;
+}
+
+.bg-dark-surface {
+  background-color: #242424;
+}
+
+.bg-dark-card {
+  background-color: rgba(51, 51, 51, 0.75);
+}
+
+.text-brand-orange {
+  color: #F4A049;
+}
+
+.text-brand-bronze {
+  color: #7E4010;
+}
+
+.text-brand-silver {
+  color: #DCDCDC;
+}
+
+.border-slate-subtle {
+  border-color: rgba(220, 220, 220, 0.15);
+}
+
+/* Warm Cyber Grid Pattern Background */
+.cyber-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(244, 160, 73, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(244, 160, 73, 0.05) 1px, transparent 1px);
+}
+
+.cyber-dots-bg {
+  background-image: radial-gradient(rgba(244, 160, 73, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(51, 51, 51, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(220, 220, 220, 0.12);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(51, 51, 51, 0.85);
+  border-color: rgba(244, 160, 73, 0.45);
+  box-shadow: 0 10px 30px -10px rgba(244, 160, 73, 0.25), 0 0 20px -5px rgba(126, 64, 16, 0.2);
+  transform: translateY(-2px);
+}
+
+.glass-navbar {
+  background: rgba(51, 51, 51, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(220, 220, 220, 0.12);
+}
+
+/* Radiant Brand Glows */
+.neon-glow-orange {
+  box-shadow: 0 0 20px rgba(244, 160, 73, 0.45);
+}
+
+.neon-glow-bronze {
+  box-shadow: 0 0 20px rgba(126, 64, 16, 0.45);
+}
+
+.neon-glow-dual {
+  box-shadow: 0 0 25px rgba(244, 160, 73, 0.35), 0 0 35px rgba(126, 64, 16, 0.25);
+}
+
+.text-gradient-brand {
+  background: linear-gradient(135deg, #FFFFFF 20%, #F4A049 70%, #7E4010 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F4A049 60%, #7E4010 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, #FFFFFF 0%, #DCDCDC 60%, #7E4010 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-dual {
+  background: linear-gradient(135deg, #F4A049 0%, #DCDCDC 50%, #7E4010 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F4A049;
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes light-burst-expand {
+  0% {
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
+/* ─── Scroll Reveal Animations ─────────────────────────── */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes reveal-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes reveal-scale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer-move {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes gradient-border-spin {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes counter-tick {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Utility classes for scroll reveals */
+.reveal-up {
+  animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reveal-left {
+  animation: reveal-left 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reveal-right {
+  animation: reveal-right 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reveal-scale {
+  animation: reveal-scale 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Delay helpers for staggering children */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+
+/* Shimmer text highlight */
+.text-shimmer {
+  background: linear-gradient(90deg, #F4A049 0%, #FFFFFF 40%, #F4A049 60%, #7E4010 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-move 3s linear infinite;
+}
+
+/* Animated gradient border card */
+.gradient-border-card {
+  position: relative;
+  border-radius: 1rem;
+  background: #333333;
+}
+.gradient-border-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #F4A049, #7E4010, #DCDCDC, #F4A049);
+  background-size: 300% 300%;
+  animation: gradient-border-spin 4s ease infinite;
+  z-index: -1;
+}
+
+/* Page transition fade */
+@keyframes page-fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+main {
+  animation: page-fade-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Locomotive / Lenis Smooth Scrolling Optimization */
+html.lenis,
+html.lenis body {
+  height: auto;
+  scroll-behavior: auto !important;
+}
+
+html:not(.lenis) {
+  scroll-behavior: smooth;
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 35s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .marquee-track {
+    animation-duration: 45s;
+  }
+}
+
+.marquee-track:hover {
+  animation-play-state: paused !important;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 479px) {
+  .xs\:hidden {
+    display: none;
+  }
+}
+@media (min-width: 480px) {
+  .xs\:inline {
+    display: inline;
+  }
+  .xs\:flex-row {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 640px) {
+  .truncate-mobile {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+}
